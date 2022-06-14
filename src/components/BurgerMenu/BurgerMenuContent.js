@@ -27,6 +27,7 @@ const DropDownContainer = styled.div`
   top: 12px !important;
   right: 5px !important;
   overflow-y: scroll;
+  transition: opacity 0.3s linear;
 `;
 
 const DropDownContent = styled.div`
