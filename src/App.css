@@ -1,9 +1,31 @@
+@font-face {
+  font-family: 'Blink-bold';
+  src: url("./assets/fonts/Roboto/Roboto-Black.ttf");
+}
+
+@font-face {
+  font-family: 'Blink-regular';
+  src: url("./assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Blink-regular", sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.5;
+  margin: 0;
+  line-height: 1.5;
+  background-color: #151515;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus{
+  outline: none;
 }

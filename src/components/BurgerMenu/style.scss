@@ -1,0 +1,9 @@
+.drop-down-menu-opened {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drop-down-menu-closed {
+  opacity: 0;
+  pointer-events: none;
+}
