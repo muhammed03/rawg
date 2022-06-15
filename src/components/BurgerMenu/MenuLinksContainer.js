@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontColor } from '../styles/custom.styled';
+import { color } from '../styles/custom.styled';
 
 const MenuLinksWrapper = styled.div`
   width: 75%;
@@ -8,7 +8,7 @@ const MenuLinksWrapper = styled.div`
 
 const MenuLinksNav = styled.nav`
   padding: 0;
-  color: ${fontColor.secondary};
+  color: ${color.secondary};
 `;
 
 const MenuLink = styled.a`
@@ -17,7 +17,7 @@ const MenuLink = styled.a`
   font-weight: 700;
   font-family: 'Blink-bold', sans-serif;
   text-transform: none;
-  color: ${fontColor.secondary};
+  color: ${color.secondary};
   letter-spacing: 1px;
   display: block;
 `;

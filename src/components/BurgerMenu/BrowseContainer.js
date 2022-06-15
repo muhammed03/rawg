@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontColor } from '../styles/custom.styled';
+import { color } from '../styles/custom.styled';
 
 const BrowseNav = styled.nav`
   display: flex;
@@ -10,7 +10,7 @@ const BrowseNav = styled.nav`
 const BrowseLink = styled.a`
   font-size: 1.125rem;
   padding: 0.375rem 0;
-  color: ${fontColor.secondary};
+  color: ${color.secondary};
   font-weight: 500;
 
   &:first-child {
@@ -27,7 +27,7 @@ const LinkContainer = styled.div`
 
 const Link = styled.a`
   padding: 0.375rem 0 0.5rem;
-  color: ${fontColor.secondary};
+  color: ${color.secondary};
   font-size: 1.5rem;
   font-weight: 700;
   font-family: 'Blink-bold', sans-serif;

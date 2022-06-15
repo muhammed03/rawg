@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontColor } from '../styles/custom.styled';
+import { color } from '../styles/custom.styled';
 
 const StyledLogo = styled.div`
   font-size: 1.125rem;
@@ -7,7 +7,7 @@ const StyledLogo = styled.div`
   font-family: 'Blink-bold', sans-serif;
   line-height: 1;
   letter-spacing: 0.3125rem;
-  color: ${fontColor.primary};
+  color: ${color.primary};
 `;
 
 function Logo() {

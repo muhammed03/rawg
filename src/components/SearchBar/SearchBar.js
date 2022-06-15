@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontColor } from '../styles/custom.styled';
+import { color } from '../styles/custom.styled';
 
 import SearchIcon from '../../assets/icons/search-icon.svg';
 import FocusSearchIcon from '../../assets/icons/search-icon-focus.svg';
@@ -9,7 +9,7 @@ const StyledForm = styled.form`
 `;
 
 const StyledInput = styled.input`
-  color: ${fontColor.secondary};
+  color: ${color.secondary};
   font-size: 0.875rem;
   height: 1.75rem;
   width: 100%;
@@ -17,7 +17,7 @@ const StyledInput = styled.input`
   background-repeat: no-repeat;
   background-size: 1rem;
   background-position: 1rem;
-  background-color: ${fontColor.primaryBg};
+  background-color: ${color.primaryBg};
   border-radius: 1rem;
   border: none;
   padding: 0 12px 0 38px;
@@ -29,7 +29,7 @@ const StyledInput = styled.input`
 
   &:focus {
     background-image: url(${FocusSearchIcon});
-    background-color: ${fontColor.primary};
+    background-color: ${color.primary};
   }
 `;
 

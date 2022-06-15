@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import { fontColor } from '../styles/custom.styled';
+import { color } from '../styles/custom.styled';
 
 import { BurgerContext } from '../../contexts/BurgerContext';
 import MenuLinksContainer from './MenuLinksContainer';
@@ -17,6 +17,7 @@ const ContentOverlay = styled.div`
   display: block;
   content: '';
   transition: opacity 0.3s ease-out;
+  z-index: 15;
 `;
 
 const DropDownContainer = styled.div`
@@ -28,12 +29,13 @@ const DropDownContainer = styled.div`
   right: 5px !important;
   overflow-y: scroll;
   transition: opacity 0.3s linear;
+  z-index: 15;
 `;
 
 const DropDownContent = styled.div`
   position: relative;
   display: block;
-  background-color: ${fontColor.primary};
+  background-color: ${color.primary};
   height: 100%;
   overflow-y: auto;
   border-radius: 1.5rem;
@@ -49,7 +51,7 @@ const DropDownMenuWrapper = styled.div`
 const DropDownMenu = styled.div`
   display: flex;
   flex-wrap: wrap;
-  color: ${fontColor.secondary};
+  color: ${color.secondary};
 `;
 
 function BurgerMenuContent() {

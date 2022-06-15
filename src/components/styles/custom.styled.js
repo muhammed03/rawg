@@ -16,8 +16,11 @@ export const device = {
   laptopL: `(min-width: ${size.laptopL})`,
 };
 
-export const fontColor = {
+export const color = {
   primary: '#fff',
   secondary: '#000',
+  tertiary: '#6c6c6c',
   primaryBg: '#3b3b3b',
+  secondaryBg: '#202020',
+  tertiaryBg: '#303030',
 };
