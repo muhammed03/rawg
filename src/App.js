@@ -1,15 +1,16 @@
-import Header from './components/Header/Header';
-import { Container } from './components/styles/Container.styled';
+import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
+import Layout from './layouts/Layout/Layout';
+import GamePage from './pages/GamePage/GamePage';
 
 function App() {
   return (
-    <div className="App">
-      <Container>
-        <Header />
-      </Container>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<GamePage />} />
+      </Route>
+    </Routes>
   );
 }
 

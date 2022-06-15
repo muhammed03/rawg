@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import Logo from '../Logo/Logo';
-import SearchBar from '../SearchBar/SearchBar';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import Logo from '../../components/Logo/Logo';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
 
 import './header.scss';
 
