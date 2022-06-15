@@ -8,7 +8,7 @@ const GameCardAboutWrapper = styled.div`
   position: absolute;
   left: 0;
   background-color: ${color.secondaryBg};
-  z-index: 3;
+  z-index: 11;
   width: 100%;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
