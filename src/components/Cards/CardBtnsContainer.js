@@ -5,12 +5,12 @@ import PlusIcon from '../../assets/icons/plus-icon';
 import GiftIcon from '../../assets/icons/gift-icon';
 import DotsIcon from '../../assets/icons/dots-icon';
 
-const StyledContainer = styled.div`
+const StyledBtnsContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const GameCardBtn = styled.button`
+const CardBtn = styled.button`
   display: flex;
   padding: 0.4rem;
   margin-right: 0.25rem;
@@ -25,30 +25,29 @@ const GameCardBtn = styled.button`
   height: 1.5rem;
 `;
 
-function GameCardBtnsContainer(props) {
-  // eslint-disable-next-line react/prop-types
+function CardBtnsContainer(props) {
   const { suggestionsCount } = props;
 
   return (
-    <StyledContainer>
-      <GameCardBtn>
+    <StyledBtnsContainer>
+      <CardBtn>
         <span>
           <PlusIcon />
         </span>
         <span>{suggestionsCount}</span>
-      </GameCardBtn>
-      <GameCardBtn>
+      </CardBtn>
+      <CardBtn>
         <span>
           <GiftIcon />
         </span>
-      </GameCardBtn>
-      <GameCardBtn>
+      </CardBtn>
+      <CardBtn>
         <span>
           <DotsIcon />
         </span>
-      </GameCardBtn>
-    </StyledContainer>
+      </CardBtn>
+    </StyledBtnsContainer>
   );
 }
 
-export default GameCardBtnsContainer;
+export default CardBtnsContainer;

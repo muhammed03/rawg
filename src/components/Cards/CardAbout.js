@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { color } from '../styles/custom.styled';
 
 import DropDownIcon from '../../assets/icons/drop-down-icon.svg';
+import { convertDateString } from '../../utils/helpers';
 
-const GameCardAboutWrapper = styled.div`
+const StyledCardAbout = styled.div`
   position: absolute;
   left: 0;
   background-color: ${color.secondaryBg};
@@ -22,7 +23,7 @@ const StyledAboutList = styled.ul`
   list-style: none;
 `;
 
-const GameCardAboutItem = styled.li`
+const CardAboutItem = styled.li`
   display: flex;
   align-items: baseline;
   padding: 0.75rem 0;
@@ -30,7 +31,7 @@ const GameCardAboutItem = styled.li`
   border-bottom: 1px solid ${color.tertiary};
 `;
 
-const GameCardAboutItemCenter = styled.li`
+const CardAboutItemCenter = styled.li`
   display: flex;
   align-items: baseline;
   padding-top: 0.75rem;
@@ -40,11 +41,11 @@ const GameCardAboutItemCenter = styled.li`
   cursor: pointer;
 `;
 
-const GameCardAboutTerm = styled.span`
+const CardAboutTerm = styled.span`
   color: ${color.tertiary};
 `;
 
-const GameCardAboutDesc = styled.span`
+const CardAboutDesc = styled.span`
   color: ${color.primary};
   text-align: right;
 `;
@@ -80,59 +81,54 @@ const switchControls = {
   off: 'off',
 };
 
-function GameCardAboutList(props) {
+function CardAbout(props) {
   const [showMoreState, setShowMoreState] = useState(switchControls.off);
   const {
-    // eslint-disable-next-line react/prop-types
     aboutInfo: { genres, releasedDate, rating },
   } = props;
 
-  const publishedDate = new Date(releasedDate).toLocaleDateString('en-us', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+  const publishedDate = convertDateString(releasedDate);
 
   return (
-    <GameCardAboutWrapper>
+    <StyledCardAbout>
       <StyledAboutList>
-        <GameCardAboutItemCenter
+        <CardAboutItemCenter
           className={showMoreState !== switchControls.off && 'display-none'}
           onClick={() => setShowMoreState(switchControls.on)}
         >
           View more
-        </GameCardAboutItemCenter>
-        <GameCardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
-          <GameCardAboutTerm>Release date:</GameCardAboutTerm>
-          <GameCardAboutDesc>{publishedDate}</GameCardAboutDesc>
-        </GameCardAboutItem>
-        <GameCardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
-          <GameCardAboutTerm>Genres:</GameCardAboutTerm>
-          <GameCardAboutDesc>
+        </CardAboutItemCenter>
+        <CardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
+          <CardAboutTerm>Release date:</CardAboutTerm>
+          <CardAboutDesc>{publishedDate}</CardAboutDesc>
+        </CardAboutItem>
+        <CardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
+          <CardAboutTerm>Genres:</CardAboutTerm>
+          <CardAboutDesc>
             {genres
               .map((genre) => {
                 return genre.name;
               })
               .join(', ')}
-          </GameCardAboutDesc>
-        </GameCardAboutItem>
-        <GameCardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
-          <GameCardAboutTerm>rating:</GameCardAboutTerm>
-          <GameCardAboutDesc>#{rating}</GameCardAboutDesc>
-        </GameCardAboutItem>
-        <GameCardAboutItemCenter
+          </CardAboutDesc>
+        </CardAboutItem>
+        <CardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
+          <CardAboutTerm>rating:</CardAboutTerm>
+          <CardAboutDesc>#{rating}</CardAboutDesc>
+        </CardAboutItem>
+        <CardAboutItemCenter
           className={showMoreState !== switchControls.on && 'display-none'}
           onClick={() => setShowMoreState(switchControls.off)}
         >
           View less
-        </GameCardAboutItemCenter>
+        </CardAboutItemCenter>
       </StyledAboutList>
       <ShowMoreBtn className={showMoreState !== switchControls.on && 'display-none'}>
         <span>Show more like this</span>
         <ShowMoreIcon />
       </ShowMoreBtn>
-    </GameCardAboutWrapper>
+    </StyledCardAbout>
   );
 }
 
-export default GameCardAboutList;
+export default CardAbout;

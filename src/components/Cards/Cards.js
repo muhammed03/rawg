@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import GamesListContext from '../../contexts/GamesListContext';
 import { getColumnCount, getDeviceWidth, splitArrayIntoChunksOfLen } from '../../utils/helpers';
 
-import GameCard from './GameCard';
+import Card from './Card';
 import { device, gridColumns } from '../styles/custom.styled';
 
-const GameCardsWrapper = styled.div`
+const StyledCards = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +35,7 @@ const StyledCardsColumnContainer = styled.div`
   gap: 2rem;
 `;
 
-function GameCardsContainer() {
+function Cards() {
   const defaultDeviceWidth = getDeviceWidth(window.innerWidth, screen.width);
   const [deviceWidth, setDeviceWidth] = useState(defaultDeviceWidth);
   const { list } = useContext(GamesListContext);
@@ -53,18 +53,18 @@ function GameCardsContainer() {
   });
 
   return (
-    <GameCardsWrapper>
+    <StyledCards>
       {splitList.map((list, index) => {
         return (
           <StyledCardsColumnContainer key={index}>
             {list.map((listItem) => {
-              return <GameCard cardData={listItem} key={listItem.id} />;
+              return <Card cardData={listItem} key={listItem.id} />;
             })}
           </StyledCardsColumnContainer>
         );
       })}
-    </GameCardsWrapper>
+    </StyledCards>
   );
 }
 
-export default GameCardsContainer;
+export default Cards;
