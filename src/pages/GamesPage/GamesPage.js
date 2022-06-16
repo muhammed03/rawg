@@ -1,7 +1,7 @@
 import GameContent from '../../components/GameContent/GameContent';
 
-function GamePage() {
+function GamesPage() {
   return <GameContent />;
 }
 
-export default GamePage;
+export default GamesPage;
