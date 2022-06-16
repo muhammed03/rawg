@@ -22,13 +22,21 @@ const GameCardImg = styled.div`
   z-index: 1;
 `;
 
-function GameCardGalleryContainer() {
+function GameCardGalleryContainer(props) {
+  const imageList = [];
+  const { images } = props;
+  if (images) {
+    for (const [, value] of Object.entries(images)) {
+      imageList.push(value);
+    }
+  }
+
   return (
     <CardGalleryContainer>
       <AwesomeSlider cssModule={AwsSliderStyles} className="aws-btn">
-        <GameCardImg data-src="https://media.rawg.io/media/crop/600/400/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg" />
-        <GameCardImg data-src="https://media.rawg.io/media/crop/600/400/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg" />
-        <GameCardImg data-src="https://media.rawg.io/media/crop/600/400/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg" />
+        {imageList.map((img) => {
+          return <GameCardImg data-src={img.image} key={img.id} />;
+        })}
       </AwesomeSlider>
     </CardGalleryContainer>
   );

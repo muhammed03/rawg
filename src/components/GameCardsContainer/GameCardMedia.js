@@ -16,12 +16,16 @@ const GameCardMediaWrapper = styled.div`
   overflow: hidden;
 `;
 
-function GameCardMedia() {
+function GameCardMedia(itemProps) {
+  const { images } = itemProps;
+
   return (
     <GameCardMediaContainer>
-      <GameCardMediaWrapper>
-        <GameCardGalleryContainer />
-      </GameCardMediaWrapper>
+      {images.length !== 0 && (
+        <GameCardMediaWrapper>
+          <GameCardGalleryContainer {...itemProps} />
+        </GameCardMediaWrapper>
+      )}
     </GameCardMediaContainer>
   );
 }

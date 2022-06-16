@@ -25,14 +25,17 @@ const GameCardBtn = styled.button`
   height: 1.5rem;
 `;
 
-function GameCardBtnsContainer() {
+function GameCardBtnsContainer(props) {
+  // eslint-disable-next-line react/prop-types
+  const { suggestionsCount } = props;
+
   return (
     <StyledContainer>
       <GameCardBtn>
         <span>
           <PlusIcon />
         </span>
-        <span>50</span>
+        <span>{suggestionsCount}</span>
       </GameCardBtn>
       <GameCardBtn>
         <span>

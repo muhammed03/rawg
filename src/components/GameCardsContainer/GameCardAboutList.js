@@ -37,6 +37,7 @@ const GameCardAboutItemCenter = styled.li`
   justify-content: center;
   text-decoration: underline;
   line-height: 1;
+  cursor: pointer;
 `;
 
 const GameCardAboutTerm = styled.span`
@@ -45,6 +46,7 @@ const GameCardAboutTerm = styled.span`
 
 const GameCardAboutDesc = styled.span`
   color: ${color.primary};
+  text-align: right;
 `;
 
 const ShowMoreBtn = styled.a`
@@ -78,8 +80,18 @@ const switchControls = {
   off: 'off',
 };
 
-function GameCardAboutList() {
+function GameCardAboutList(props) {
   const [showMoreState, setShowMoreState] = useState(switchControls.off);
+  const {
+    // eslint-disable-next-line react/prop-types
+    aboutInfo: { genres, releasedDate, rating },
+  } = props;
+
+  const publishedDate = new Date(releasedDate).toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
 
   return (
     <GameCardAboutWrapper>
@@ -92,15 +104,22 @@ function GameCardAboutList() {
         </GameCardAboutItemCenter>
         <GameCardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
           <GameCardAboutTerm>Release date:</GameCardAboutTerm>
-          <GameCardAboutDesc>Dec 31, 2022</GameCardAboutDesc>
+          <GameCardAboutDesc>{publishedDate}</GameCardAboutDesc>
         </GameCardAboutItem>
         <GameCardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
           <GameCardAboutTerm>Genres:</GameCardAboutTerm>
-          <GameCardAboutDesc>Action, RPG</GameCardAboutDesc>
+          <GameCardAboutDesc>
+            {genres
+              // eslint-disable-next-line react/prop-types
+              .map((genre) => {
+                return genre.name;
+              })
+              .join(', ')}
+          </GameCardAboutDesc>
         </GameCardAboutItem>
         <GameCardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
           <GameCardAboutTerm>Chart:</GameCardAboutTerm>
-          <GameCardAboutDesc>#5 Top 2022</GameCardAboutDesc>
+          <GameCardAboutDesc>#{rating} Top 2022</GameCardAboutDesc>
         </GameCardAboutItem>
         <GameCardAboutItemCenter
           className={showMoreState !== switchControls.on && 'display-none'}

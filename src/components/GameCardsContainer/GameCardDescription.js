@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { color } from '../styles/custom.styled';
 
-import WindowsIconSvg from '../../assets/icons/windows-os-icon.svg';
+// import WindowsIconSvg from '../../assets/icons/windows-os-icon.svg';
 import GameCardBtnsContainer from './GameCardBtnsContainer';
 import GameCardAboutList from './GameCardAboutList';
 
@@ -11,20 +11,20 @@ const StyledGameCardDescription = styled.div`
   color: ${color.primary};
 `;
 
-const GameCardIcons = styled.div`
-  display: flex;
-  margin-right: 0.375rem;
-  margin-bottom: 0.4375rem;
-`;
-
-const GameCardIcon = styled.div`
-  width: 0.75rem;
-  height: 0.8125rem;
-  background-image: url(${WindowsIconSvg});
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: contain;
-`;
+// const GameCardIcons = styled.div`
+//   display: flex;
+//   margin-right: 0.375rem;
+//   margin-bottom: 0.4375rem;
+// `;
+//
+// const GameCardIcon = styled.div`
+//   width: 0.75rem;
+//   height: 0.8125rem;
+//   background-image: url(${WindowsIconSvg});
+//   background-repeat: no-repeat;
+//   background-position: 50%;
+//   background-size: contain;
+// `;
 
 const GameCardTitle = styled.a`
   display: block;
@@ -34,15 +34,28 @@ const GameCardTitle = styled.a`
   padding-bottom: 0.125rem;
 `;
 
-function GameCardDescription() {
+function GameCardDescription(cardData) {
+  const {
+    name,
+    suggestions_count: suggestionsCount,
+    rating_top: rating,
+    released: releasedDate,
+    genres,
+  } = cardData;
+
+  const aboutInfo = {
+    rating,
+    releasedDate,
+    genres,
+  };
   return (
     <StyledGameCardDescription>
-      <GameCardIcons>
-        <GameCardIcon />
-      </GameCardIcons>
-      <GameCardTitle>Vampire: The Masquerade - Bloodlines 2 🤡</GameCardTitle>
-      <GameCardBtnsContainer />
-      <GameCardAboutList />
+      {/*<GameCardIcons>*/}
+      {/*  <GameCardIcon />*/}
+      {/*</GameCardIcons>*/}
+      <GameCardTitle>{name}</GameCardTitle>
+      <GameCardBtnsContainer suggestionsCount={suggestionsCount} />
+      <GameCardAboutList aboutInfo={aboutInfo} />
     </StyledGameCardDescription>
   );
 }
