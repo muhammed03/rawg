@@ -2,7 +2,6 @@ import { createContext, useState } from 'react';
 
 const BurgerContext = createContext({});
 
-// eslint-disable-next-line react/prop-types
 const BurgerMenuProvider = ({ children }) => {
   const [burgerMenuOpened, setBurgerView] = useState(false);
 

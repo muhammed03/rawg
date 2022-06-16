@@ -4,7 +4,10 @@ import HeaderMenuButton from '../Buttons/HeaderMenuBtn';
 import BurgerMenuContent from './BurgerMenuContent';
 import BurgerMenuProvider from '../../contexts/BurgerContext';
 
-import './style.scss';
+const MenuContainer = styled.div`
+  width: auto;
+  padding-left: 10px;
+`;
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -19,7 +22,7 @@ const HeaderMenu = styled.div`
 
 function BurgerMenu() {
   return (
-    <div className="header__item">
+    <MenuContainer>
       <MenuWrapper>
         <HeaderMenu>
           <BurgerMenuProvider>
@@ -28,7 +31,7 @@ function BurgerMenu() {
           </BurgerMenuProvider>
         </HeaderMenu>
       </MenuWrapper>
-    </div>
+    </MenuContainer>
   );
 }
 

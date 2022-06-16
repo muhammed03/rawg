@@ -18,6 +18,8 @@ const ContentOverlay = styled.div`
   content: '';
   transition: opacity 0.3s ease-out;
   z-index: 15;
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
+  pointer-events: ${(props) => (props.isOpen ? 'auto' : 'none')};
 `;
 
 const DropDownContainer = styled.div`
@@ -30,6 +32,8 @@ const DropDownContainer = styled.div`
   overflow-y: scroll;
   transition: opacity 0.3s linear;
   z-index: 15;
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
+  pointer-events: ${(props) => (props.isOpen ? 'auto' : 'none')};
 `;
 
 const DropDownContent = styled.div`
@@ -58,14 +62,9 @@ function BurgerMenuContent() {
   const { burgerMenuOpened, closeBurgerMenu } = useContext(BurgerContext);
 
   return (
-    <div>
-      <ContentOverlay
-        className={burgerMenuOpened ? 'drop-down-menu-opened' : 'drop-down-menu-closed'}
-        onClick={closeBurgerMenu}
-      />
-      <DropDownContainer
-        className={burgerMenuOpened ? 'drop-down-menu-opened' : 'drop-down-menu-closed'}
-      >
+    <>
+      <ContentOverlay onClick={closeBurgerMenu} isOpen={burgerMenuOpened} />
+      <DropDownContainer isOpen={burgerMenuOpened}>
         <DropDownContent>
           <DropDownMenuWrapper>
             <DropDownMenu>
@@ -76,7 +75,7 @@ function BurgerMenuContent() {
           </DropDownMenuWrapper>
         </DropDownContent>
       </DropDownContainer>
-    </div>
+    </>
   );
 }
 
