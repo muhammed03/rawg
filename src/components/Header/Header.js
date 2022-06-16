@@ -4,8 +4,6 @@ import Logo from '../../components/Logo/Logo';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
 
-import './header.scss';
-
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
