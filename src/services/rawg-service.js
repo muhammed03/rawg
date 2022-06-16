@@ -16,4 +16,16 @@ const getGamesList = async (filterParams) => {
   return res.data.results;
 };
 
-export { getGamesList };
+const getGameDetailById = async (id) => {
+  const res = await axios.get(`${baseUrl}/games/${id}?key=${apiKey}`);
+
+  return res.data;
+};
+
+const getGameScreenshots = async (id) => {
+  const res = await axios.get(`${baseUrl}/games/${id}/screenshots?key=${apiKey}`);
+
+  return res.data.results;
+};
+
+export { getGamesList, getGameDetailById, getGameScreenshots };

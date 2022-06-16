@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { color } from '../styles/custom.styled';
 
@@ -26,16 +27,23 @@ const StyledGameCardDescription = styled.div`
 //   background-size: contain;
 // `;
 
-const GameCardTitle = styled.a`
+const GameCardTitle = styled.span`
   display: block;
   font-size: 1.5rem;
   margin: 0.5rem 0;
   overflow: hidden;
   padding-bottom: 0.125rem;
+  cursor: pointer;
+  color: ${color.primary};
+
+  &:hover {
+    color: ${color.tertiary};
+  }
 `;
 
 function GameCardDescription(cardData) {
   const {
+    id,
     name,
     suggestions_count: suggestionsCount,
     rating_top: rating,
@@ -53,7 +61,9 @@ function GameCardDescription(cardData) {
       {/*<GameCardIcons>*/}
       {/*  <GameCardIcon />*/}
       {/*</GameCardIcons>*/}
-      <GameCardTitle>{name}</GameCardTitle>
+      <Link to={`/games/${id}`}>
+        <GameCardTitle>{name}</GameCardTitle>
+      </Link>
       <GameCardBtnsContainer suggestionsCount={suggestionsCount} />
       <GameCardAboutList aboutInfo={aboutInfo} />
     </StyledGameCardDescription>

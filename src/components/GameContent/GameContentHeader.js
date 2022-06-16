@@ -1,24 +1,12 @@
 import styled from 'styled-components';
 import { color, device } from '../styles/custom.styled';
 
+import PageTitle from '../PageTitle/PageTitle';
+
 const GameHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
-`;
-
-const GameHeaderTitle = styled.h1`
-  color: ${color.primary};
-  font-size: 2.25rem;
-  margin: 0;
-
-  @media ${device.tablet} {
-    font-size: 3.5rem;
-  }
-
-  @media ${device.laptop} {
-    font-size: 4.5rem;
-  }
 `;
 
 const GameHeaderSubTitle = styled.p`
@@ -38,7 +26,7 @@ const GameHeaderSubTitle = styled.p`
 function GameHeader() {
   return (
     <GameHeaderWrapper>
-      <GameHeaderTitle>New and trending</GameHeaderTitle>
+      <PageTitle>New and trending</PageTitle>
       <GameHeaderSubTitle>Based on player counts and release date</GameHeaderSubTitle>
     </GameHeaderWrapper>
   );

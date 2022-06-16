@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { color } from '../styles/custom.styled';
 
@@ -13,9 +14,9 @@ const StyledLogo = styled.div`
 function Logo() {
   return (
     <div className="header__item">
-      <a href="/">
+      <Link to="/">
         <StyledLogo>RAWG</StyledLogo>
-      </a>
+      </Link>
     </div>
   );
 }

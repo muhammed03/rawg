@@ -39,7 +39,7 @@ const GameControlSelect = () => {
   return (
     <SelectContainer>
       <StyledSelect onChange={handleChange} defaultValue="-rating">
-        <option value="released">Order by: Recently released</option>
+        <option value="released">Order by: Lately released</option>
         <option value="-released">Order by: Upcoming releases</option>
         <option value="-rating">Order by: Top rating</option>
         <option value="rating">Order by: Lowly rating</option>

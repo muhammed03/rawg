@@ -110,7 +110,6 @@ function GameCardAboutList(props) {
           <GameCardAboutTerm>Genres:</GameCardAboutTerm>
           <GameCardAboutDesc>
             {genres
-              // eslint-disable-next-line react/prop-types
               .map((genre) => {
                 return genre.name;
               })
@@ -118,8 +117,8 @@ function GameCardAboutList(props) {
           </GameCardAboutDesc>
         </GameCardAboutItem>
         <GameCardAboutItem className={showMoreState !== switchControls.on && 'display-none'}>
-          <GameCardAboutTerm>Chart:</GameCardAboutTerm>
-          <GameCardAboutDesc>#{rating} Top 2022</GameCardAboutDesc>
+          <GameCardAboutTerm>rating:</GameCardAboutTerm>
+          <GameCardAboutDesc>#{rating}</GameCardAboutDesc>
         </GameCardAboutItem>
         <GameCardAboutItemCenter
           className={showMoreState !== switchControls.on && 'display-none'}
