@@ -41,4 +41,12 @@ function getDeviceWidth(windowWidth, screenWidth) {
   return windowWidth > 0 ? windowWidth : screenWidth;
 }
 
-export { getColumnCount, splitArrayIntoChunksOfLen, getDeviceWidth };
+function convertDateString(date) {
+  return new Date(date).toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
+export { getColumnCount, splitArrayIntoChunksOfLen, getDeviceWidth, convertDateString };

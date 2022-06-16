@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import DetailMetaBlock from './DetailMetaBlock';
-import { device } from '../styles/custom.styled';
 import DetailMetaBlockTag from './DetailMetaBlockTag';
+import { convertDateString } from '../../utils/helpers';
 
 const DetailMetaWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-
-  @media ${device.tablet} {
-    grid-column: 1 / 3;
-  }
 `;
 
 function DetailMetaContainer({ data }) {
@@ -24,8 +20,7 @@ function DetailMetaContainer({ data }) {
   if (data !== {} || typeof data !== 'undefined') {
     platforms = data?.platforms
       ?.map((item) => {
-        const platformName = item?.platform.name;
-        return platformName;
+        return item?.platform.name;
       })
       .join(', ');
 
@@ -36,11 +31,7 @@ function DetailMetaContainer({ data }) {
       .join(', ');
 
     const date = data?.released;
-    releaseDate = new Date(date).toLocaleDateString('en-us', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    });
+    releaseDate = convertDateString(date);
 
     developers = data?.developers
       ?.map((developer) => {
@@ -65,13 +56,34 @@ function DetailMetaContainer({ data }) {
 
   return (
     <DetailMetaWrapper>
-      <DetailMetaBlock term="Platforms" description={platforms} />
-      <DetailMetaBlock term="Genre" description={genres} />
-      <DetailMetaBlock term="Release date" description={releaseDate} />
-      <DetailMetaBlock term="Developers" description={developers} />
-      <DetailMetaBlock term="Publisher" description={publishers} />
-      <DetailMetaBlock term="Tags" description={tags} />
-      <DetailMetaBlockTag term="Website" description={website} />
+      <DetailMetaBlock
+        term="Platforms"
+        description={platforms?.length !== 0 ? platforms : `Platforms weren't found!`}
+      />
+      <DetailMetaBlock
+        term="Genre"
+        description={genres?.length !== 0 ? genres : `Genres weren't found!`}
+      />
+      <DetailMetaBlock
+        term="Release date"
+        description={releaseDate?.length !== 0 ? releaseDate : `Release date wasn't found!`}
+      />
+      <DetailMetaBlock
+        term="Developers"
+        description={developers?.length !== 0 ? developers : `Developers weren't found!`}
+      />
+      <DetailMetaBlock
+        term="Publisher"
+        description={publishers?.length !== 0 ? publishers : `Publishers weren't found!`}
+      />
+      <DetailMetaBlock
+        term="Tags"
+        description={tags?.length !== 0 ? tags : `Tags weren't found!`}
+      />
+      <DetailMetaBlockTag
+        term="Website"
+        description={website?.length !== 0 ? website : `Website wasn't found!`}
+      />
     </DetailMetaWrapper>
   );
 }
