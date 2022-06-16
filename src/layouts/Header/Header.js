@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from '../../components/styles/custom.styled';
 import Logo from '../../components/Logo/Logo';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
@@ -10,7 +10,11 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 3.75rem;
+  height: fit-content;
+  box-sizing: border-box;
+  @media ${device.tablet} {
+    padding: 1.5rem 2.5rem;
+  }
 `;
 
 function Header() {
