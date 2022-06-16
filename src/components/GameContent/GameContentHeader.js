@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from '../styles/custom.styled';
+import { color, device } from '../styles/custom.styled';
 
 const GameHeaderWrapper = styled.div`
   display: flex;
@@ -11,12 +11,28 @@ const GameHeaderTitle = styled.h1`
   color: ${color.primary};
   font-size: 2.25rem;
   margin: 0;
+
+  @media ${device.tablet} {
+    font-size: 3.5rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 4.5rem;
+  }
 `;
 
 const GameHeaderSubTitle = styled.p`
   color: ${color.primary};
   font-size: 1rem;
   margin: 0.5rem 0 0;
+
+  @media ${device.tablet} {
+    font-size: 1.5rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 2rem;
+  }
 `;
 
 function GameHeader() {

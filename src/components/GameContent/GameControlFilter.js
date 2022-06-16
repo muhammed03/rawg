@@ -29,24 +29,30 @@ const SelectImg = styled.img`
   transform: rotate(90deg) translateX(-50%);
 `;
 
-const GameControlSelect = () => {
-  const { setOrder } = useContext(GamesListContext);
+const GameControlFilter = () => {
+  const { setPlatform } = useContext(GamesListContext);
   const handleChange = (e) => {
     e.preventDefault();
-    setOrder(e.target.value);
+    setPlatform(e.target.value);
   };
 
   return (
     <SelectContainer>
-      <StyledSelect onChange={handleChange} defaultValue="-rating">
-        <option value="released">Order by: Recently released</option>
-        <option value="-released">Order by: Upcoming releases</option>
-        <option value="-rating">Order by: Top rating</option>
-        <option value="rating">Order by: Lowly rating</option>
+      <StyledSelect onChange={handleChange} defaultValue="">
+        <option value="">Filter by: Platforms</option>
+        <option value="1">PC</option>
+        <option value="2">PlayStation</option>
+        <option value="3">Xbox</option>
+        <option value="4">IOS</option>
+        <option value="5">Android</option>
+        <option value="6">Apple Macintosh</option>
+        <option value="7">Linux</option>
+        <option value="8">Nintendo</option>
+        <option value="9">Web</option>
       </StyledSelect>
       <SelectImg src={DropDownIcon} />
     </SelectContainer>
   );
 };
 
-export default GameControlSelect;
+export default GameControlFilter;

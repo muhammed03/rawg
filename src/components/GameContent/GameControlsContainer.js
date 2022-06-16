@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import GameControlSelect from './GameControlSelect';
+import GameControlFilter from './GameControlFilter';
 
 const GameControlsWrapper = styled.div`
   margin-bottom: 1rem;
@@ -17,7 +18,7 @@ function GameControlsContainer() {
     <GameControlsWrapper>
       <GameControlsList>
         <GameControlSelect />
-        <GameControlSelect />
+        <GameControlFilter />
       </GameControlsList>
     </GameControlsWrapper>
   );
