@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { color } from '../styles/custom.styled';
 
+const LogoContainer = styled.div`
+  width: auto;
+  padding-left: 10px;
+`;
+
 const StyledLogo = styled.div`
   font-size: 1.125rem;
   font-weight: 900;
@@ -13,11 +18,11 @@ const StyledLogo = styled.div`
 
 function Logo() {
   return (
-    <div className="header__item">
+    <LogoContainer>
       <Link to="/">
         <StyledLogo>RAWG</StyledLogo>
       </Link>
-    </div>
+    </LogoContainer>
   );
 }
 
