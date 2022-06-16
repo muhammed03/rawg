@@ -1,19 +1,19 @@
-const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
+export const size = {
+  mobileS: 320,
+  mobileM: 375,
+  mobileL: 425,
+  tablet: 768,
+  laptop: 1024,
+  laptopL: 1440,
 };
 
 export const device = {
-  mobileS: `(min-width: ${size.mobileS})`,
-  mobileM: `(min-width: ${size.mobileM})`,
-  mobileL: `(min-width: ${size.mobileL})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  laptopL: `(min-width: ${size.laptopL})`,
+  mobileS: `(min-width: ${size.mobileS}px)`,
+  mobileM: `(min-width: ${size.mobileM}px)`,
+  mobileL: `(min-width: ${size.mobileL}px)`,
+  tablet: `(min-width: ${size.tablet}px)`,
+  laptop: `(min-width: ${size.laptop}px)`,
+  laptopL: `(min-width: ${size.laptopL}px)`,
 };
 
 export const color = {
@@ -23,4 +23,11 @@ export const color = {
   primaryBg: '#3b3b3b',
   secondaryBg: '#202020',
   tertiaryBg: '#303030',
+};
+
+export const gridColumns = {
+  mobile: 1,
+  tablet: 3,
+  laptop: 4,
+  laptopL: 5,
 };
