@@ -11,21 +11,33 @@ const getGamesList = async (filterParams) => {
     }
   }
 
-  const res = await axios.get(`${baseUrl}/games?key=${apiKey}&${params.toString()}`);
+  try {
+    const res = await axios.get(`${baseUrl}/games?key=${apiKey}&${params.toString()}`);
 
-  return res.data.results;
+    return res.data.results;
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
 const getGameDetailById = async (id) => {
-  const res = await axios.get(`${baseUrl}/games/${id}?key=${apiKey}`);
+  try {
+    const res = await axios.get(`${baseUrl}/games/${id}?key=${apiKey}`);
 
-  return res.data;
+    return res.data;
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
 const getGameScreenshots = async (id) => {
-  const res = await axios.get(`${baseUrl}/games/${id}/screenshots?key=${apiKey}`);
+  try {
+    const res = await axios.get(`${baseUrl}/games/${id}/screenshots?key=${apiKey}`);
 
-  return res.data.results;
+    return res.data.results;
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
 export { getGamesList, getGameDetailById, getGameScreenshots };
