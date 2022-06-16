@@ -55,12 +55,13 @@ const DropDownMenu = styled.div`
 `;
 
 function BurgerMenuContent() {
-  const { burgerMenuOpened } = useContext(BurgerContext);
+  const { burgerMenuOpened, closeBurgerMenu } = useContext(BurgerContext);
 
   return (
     <div>
       <ContentOverlay
         className={burgerMenuOpened ? 'drop-down-menu-opened' : 'drop-down-menu-closed'}
+        onClick={closeBurgerMenu}
       />
       <DropDownContainer
         className={burgerMenuOpened ? 'drop-down-menu-opened' : 'drop-down-menu-closed'}
