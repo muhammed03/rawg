@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { device, color } from '../styles/custom.styled';
 
@@ -6,7 +6,11 @@ import GamesListContext from '../../contexts/GamesListContext';
 
 import SearchIcon from '../../assets/icons/search-icon.svg';
 import FocusSearchIcon from '../../assets/icons/search-icon-focus.svg';
-import { useState } from 'react';
+
+const StyledSearchBar = styled.div`
+  width: auto;
+  padding-left: 10px;
+`;
 
 const StyledForm = styled.form`
   margin: 0 0.75rem 0 1rem;
@@ -57,7 +61,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="header__item">
+    <StyledSearchBar>
       <StyledForm onSubmit={handleSubmit}>
         <StyledInput
           placeholder="Search for games"
@@ -67,7 +71,7 @@ function SearchBar() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </StyledForm>
-    </div>
+    </StyledSearchBar>
   );
 }
 
