@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+
+import GamesListContext from '../../contexts/GamesListContext';
 
 import GameControlsContainer from './GameControlsContainer';
 import GameCardsContainer from '../GameCardsContainer/GameCardsContainer';
+import Loader from '../Loader/Loader';
 
 const GameListWrapper = styled.div`
   width: 100%;
@@ -13,11 +17,12 @@ const GameListInnerWrapper = styled.div`
 `;
 
 function GameListContent() {
+  const { loading } = useContext(GamesListContext);
   return (
     <GameListWrapper>
       <GameListInnerWrapper>
         <GameControlsContainer />
-        <GameCardsContainer />
+        {!loading ? <GameCardsContainer /> : <Loader />}
       </GameListInnerWrapper>
     </GameListWrapper>
   );
