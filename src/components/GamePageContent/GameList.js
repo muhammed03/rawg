@@ -4,28 +4,28 @@ import styled from 'styled-components';
 import GamesListContext from '../../contexts/GamesListContext';
 
 import GameControlsContainer from './GameControlsContainer';
-import GameCardsContainer from '../GameCardsContainer/GameCardsContainer';
+import Cards from '../Cards/Cards';
 import Loader from '../Loader/Loader';
 
-const GameListWrapper = styled.div`
+const StyledGameList = styled.div`
   width: 100%;
 `;
 
-const GameListInnerWrapper = styled.div`
+const GameListWrapper = styled.div`
   margin: 1rem 0;
   width: 100%;
 `;
 
-function GameListContent() {
+function GameList() {
   const { loading } = useContext(GamesListContext);
   return (
-    <GameListWrapper>
-      <GameListInnerWrapper>
+    <StyledGameList>
+      <GameListWrapper>
         <GameControlsContainer />
-        {!loading ? <GameCardsContainer /> : <Loader />}
-      </GameListInnerWrapper>
-    </GameListWrapper>
+        {!loading ? <Cards /> : <Loader />}
+      </GameListWrapper>
+    </StyledGameList>
   );
 }
 
-export default GameListContent;
+export default GameList;

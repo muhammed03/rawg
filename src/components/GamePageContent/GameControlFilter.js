@@ -6,7 +6,7 @@ import GamesListContext from '../../contexts/GamesListContext';
 
 import DropDownIcon from '../../assets/icons/drop-down-icon.svg';
 
-const SelectContainer = styled.div`
+const StyledControlFilter = styled.div`
   position: relative;
 `;
 
@@ -37,7 +37,7 @@ const GameControlFilter = () => {
   };
 
   return (
-    <SelectContainer>
+    <StyledControlFilter>
       <StyledSelect onChange={handleChange} defaultValue="">
         <option value="">Filter by: Platforms</option>
         <option value="1">PC</option>
@@ -51,7 +51,7 @@ const GameControlFilter = () => {
         <option value="9">Web</option>
       </StyledSelect>
       <SelectImg src={DropDownIcon} />
-    </SelectContainer>
+    </StyledControlFilter>
   );
 };
 

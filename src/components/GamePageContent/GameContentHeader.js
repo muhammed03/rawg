@@ -3,13 +3,13 @@ import { color, device } from '../styles/custom.styled';
 
 import PageTitle from '../PageTitle/PageTitle';
 
-const GameHeaderWrapper = styled.div`
+const StyledGameHeader = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
 `;
 
-const GameHeaderSubTitle = styled.p`
+const PageSubtitle = styled.p`
   color: ${color.primary};
   font-size: 1rem;
   margin: 0.5rem 0 0;
@@ -25,10 +25,10 @@ const GameHeaderSubTitle = styled.p`
 
 function GameHeader() {
   return (
-    <GameHeaderWrapper>
+    <StyledGameHeader>
       <PageTitle>New and trending</PageTitle>
-      <GameHeaderSubTitle>Based on player counts and release date</GameHeaderSubTitle>
-    </GameHeaderWrapper>
+      <PageSubtitle>Based on player counts and release date</PageSubtitle>
+    </StyledGameHeader>
   );
 }
 
