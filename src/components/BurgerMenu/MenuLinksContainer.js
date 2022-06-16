@@ -26,8 +26,8 @@ function MenuLinksContainer() {
   return (
     <MenuLinksWrapper>
       <MenuLinksNav>
-        <MenuLink href="/home">Home</MenuLink>
-        <MenuLink href="/reviews">Reviews</MenuLink>
+        <MenuLink href="#">Home</MenuLink>
+        <MenuLink href="#">Reviews</MenuLink>
       </MenuLinksNav>
     </MenuLinksWrapper>
   );

@@ -39,21 +39,21 @@ function BrowseContainer() {
   return (
     <div>
       <BrowseNav>
-        <BrowseLink href="/browse">Browse</BrowseLink>
-        <BrowseLink href="/reviews">Reviews</BrowseLink>
-        <BrowseLink href="/collections">Collections</BrowseLink>
-        <BrowseLink href="/platforms">Platforms</BrowseLink>
-        <BrowseLink href="/stores">Stores</BrowseLink>
-        <BrowseLink href="/genres">Genres</BrowseLink>
-        <BrowseLink href="/creators">Creators</BrowseLink>
-        <BrowseLink href="/tags">Tags</BrowseLink>
-        <BrowseLink href="/developers">Developers</BrowseLink>
-        <BrowseLink href="/publishers">Publishers</BrowseLink>
+        <BrowseLink href="#">Browse</BrowseLink>
+        <BrowseLink href="#">Reviews</BrowseLink>
+        <BrowseLink href="#">Collections</BrowseLink>
+        <BrowseLink href="#">Platforms</BrowseLink>
+        <BrowseLink href="#">Stores</BrowseLink>
+        <BrowseLink href="#">Genres</BrowseLink>
+        <BrowseLink href="#">Creators</BrowseLink>
+        <BrowseLink href="#">Tags</BrowseLink>
+        <BrowseLink href="#">Developers</BrowseLink>
+        <BrowseLink href="#">Publishers</BrowseLink>
       </BrowseNav>
       <LinkContainer>
-        <Link href="/apidocs">API</Link>
-        <Link href="/login">Get an API key</Link>
-        <Link href="/sitemap">Sitemap</Link>
+        <Link href="#">API</Link>
+        <Link href="#">Get an API key</Link>
+        <Link href="#">Sitemap</Link>
       </LinkContainer>
     </div>
   );
