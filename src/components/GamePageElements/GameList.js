@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import GamesListContext from '../../contexts/GamesListContext';
 
 import GameControlsContainer from './GameControlsContainer';
-import Cards from '../Cards/Cards';
+import Cards from '../Cards';
 import Loader from '../Loader/Loader';
 
 const StyledGameList = styled.div`

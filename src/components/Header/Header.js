@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from '../../components/styles/custom.styled';
 import Logo from '../../components/Logo/Logo';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import BurgerMenu from '../../components/BurgerMenu/BurgerMenu';
+import BurgerMenu from '../../components/BurgerMenu/';
 
 const StyledHeader = styled.header`
   display: flex;

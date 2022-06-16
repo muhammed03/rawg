@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { color } from '../../components/styles/custom.styled';
 import { useContext } from 'react';
 import GamesListContext from '../../contexts/GamesListContext';
-import GameContentHeader from '../../components/GamePageContent/GameContentHeader';
-import GameList from '../../components/GamePageContent/GameList';
+import GameContentHeader from '../../components/GamePageElements/GameContentHeader';
+import GameList from '../../components/GamePageElements/GameList';
 import MiniLoader from '../../components/MiniLoader/MiniLoader';
 
 const GameContentWrapper = styled.div`

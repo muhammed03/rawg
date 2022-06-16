@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { getGameDetailById, getGameScreenshots } from '../../services/rawg-service';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import CardGallery from '../../components/Cards/CardGallery';
-import DetailAboutContainer from '../../components/DetailPageContent/DetailAboutContainer';
-import DetailMetaContainer from '../../components/DetailPageContent/DetailMetaContainer';
+import DetailAboutContainer from '../../components/DetailPageElements/DetailAboutContainer';
+import DetailMetaContainer from '../../components/DetailPageElements/DetailMetaContainer';
 import Loader from '../../components/Loader/Loader';
 
 const DetailPageWrapper = styled.div`
