@@ -36,6 +36,10 @@ const StyledMetaBlockDescription = styled.dd`
     color: ${color.primary};
   }
 
+  span {
+    color: ${color.primary};
+  }
+
   @media ${device.tablet} {
     font-size: 1rem;
   }
@@ -46,7 +50,11 @@ function DetailMetaBlockTag({ term, description }) {
     <StyledMetaBlock>
       <StyledMetaBlockTitle>{term}</StyledMetaBlockTitle>
       <StyledMetaBlockDescription>
-        <a href={description}>{description}</a>
+        {description !== `Website wasn't found!` ? (
+          <a href={description}>{description}</a>
+        ) : (
+          <span>{description}</span>
+        )}
       </StyledMetaBlockDescription>
     </StyledMetaBlock>
   );

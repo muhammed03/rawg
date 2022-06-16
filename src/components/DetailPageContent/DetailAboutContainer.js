@@ -3,12 +3,8 @@ import { color, device } from '../styles/custom.styled';
 
 const DetailAboutWrapper = styled.div`
   margin-top: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
-
-  @media ${device.tablet} {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
 `;
 
 const DetailAboutTitle = styled.h2`
@@ -38,7 +34,7 @@ function DetailAboutContainer({ description }) {
   return (
     <DetailAboutWrapper>
       <DetailAboutTitle>About</DetailAboutTitle>
-      <DetailAboutParagraph>{description}</DetailAboutParagraph>
+      <DetailAboutParagraph dangerouslySetInnerHTML={{ __html: description }} />
     </DetailAboutWrapper>
   );
 }
