@@ -77,9 +77,6 @@ function DetailPage() {
     })();
   }, [id]);
 
-  console.log(detail);
-  console.log(screenshotsList);
-
   return (
     <DetailPageWrapper>
       {loading ? (
