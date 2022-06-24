@@ -5,6 +5,11 @@ import CardDescription from './CardDescription';
 
 const StyledCard = styled.div`
   width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const CardWrapper = styled.div`

@@ -13,6 +13,7 @@ const StyledCardAbout = styled.div`
   width: 100%;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  pointer-events: auto;
 `;
 
 const StyledAboutList = styled.ul`

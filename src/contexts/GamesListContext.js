@@ -15,16 +15,19 @@ const GameListProvider = ({ children }) => {
   const setOrder = (param) => {
     setOrderParam(param);
     setLoading(true);
+    setPageSizeParam(15);
   };
 
   const setSearch = (param) => {
     setSearchTerm(param);
     setLoading(true);
+    setPageSizeParam(15);
   };
 
   const setPlatform = (param) => {
     setPlatformParam(param);
     setLoading(true);
+    setPageSizeParam(15);
   };
 
   const setPageSize = () => {
